@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --linear-gradient: linear-gradient(to right, #141e30, #243b55);
+  --color1: #141e30;
+  --color2: #243b55;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #f6f5f7;
+  font-family: sans-serif;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  position: relative;
+  width: 850px;
+  height: 500px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 25px 30px 55px #5557;
+}
+.form-container {
+  position: absolute;
+  padding: 0 40px;
+  width: 60%;
+  height: 100%;
+  transition: 600ms all ease-in-out;
+}
+.sign-up-container {
+  opacity: 0;
+  z-index: 1;
+}
+.sign-in-container {
+  z-index: 2;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 50px;
+}
+h1 {
+  color: var(--color1);
+}
+.social {
+  margin: 20px 0;
+}
+.social a {
+  border: solid 1px #ddd;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+span {
+  font-size: 14px;
+}
+.infield {
+  width: 100%;
+  margin: 8px 0;
+  position: relative;
+}
+input {
+  width: 100%;
+  padding: 12px 8px;
+  border: none;
+  outline: none;
+  background: #f3f3f3;
+}
+.infield label {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background: var(--linear-gradient);
+  transition: 500ms;
+}
+input:focus ~ label {
+  width: 100%;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 14px 0;
+}
+a.forgetPassword {
+  padding-bottom: 4px;
+  border-bottom: solid 1px #eee;
+}
+button {
+  padding: 12px 45px;
+  background: var(--color2);
+  border: solid 1px var(--color1);
+  border-radius: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+.form-container button {
+  margin-top: 30px;
+  transition: all ease-in-out 500ms;
+}
+.form-container button:hover {
+  background: #fff;
+  color: var(--color1);
+}
+.overlay-container {
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 60%;
+  z-index: 9;
+  transition: all ease-in-out 500ms;
+  overflow: hidden;
+}
+.overlay {
+  position: relative;
+  background: var(--linear-gradient);
+  height: 100%;
+  color: #fff;
+  transition: all ease-in-out 500ms;
+  left: -150%;
+  /* 
+    left:-150%;
+    لانه العرض تاعها 250% من الاب تاعهافطلع اوفر فلو وعشان اخليها تيجي عالقدر على ابعاد الكونتينر الاساسي الكبير بدي ارجعها للشمال بمقدار الزيادة عالعرض تاعها عن ابوها
+    */
+  width: 250%;
+  /* width:250% 
+    لان عرض الاب تاعها 40 بالمية من الكونتينر وانا بدي اياه توخذ مساحة الكونتينر كامل
+    */
+  /* 
+    النتيجة النهائية عندي انه الاوفر لاي العرض تاعها وابعادها بنفس ابعاد الكونتينر الكبير وجاي فوقه بالزبط ومغطيته
+    رحت عند ابوها المباشر وقلتله اوفرفلو اخفاء عشان اي اشي بزيد عن العرض تاعه بخفيه والي هو اي اشي بزيد عن 40 بالمية
+    */
+}
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 0 40px;
+  transition: 500ms ease-in-out;
+  width: 340px;
+}
+#overlayBtn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 297px;
+  height: 40px;
+  width: 148px;
+  border: solid 1px white;
+  border-radius: 20px;
+  background: transparent;
+}
+.overlay-left {
+  right: 60%;
+  transform: translateX(0%);
+}
+.overlay-right {
+  right: 0;
+  transform: translateX(0%);
+}
+
+.overlay-panel h1 {
+  color: white;
+  text-transform: capitalize;
+}
+.overlay-panel p {
+  letter-spacing: 0.5px;
+  margin: 25px 0 35px;
+  line-height: 1.4;
+  font-weight: thin;
+  font-size: 14px;
+}
+.overlay-panel button {
+  border: solid 2px white;
+  background: transparent;
+}
+
+.container.left-panel-active .overlay-container {
+  transform: translateX(-150%);
+  /* زيحه ناحية الشمال */
+}
+.container.left-panel-active .overlay-container .overlay {
+  transform: translateX(50%);
+}
+.container.left-panel-active .overlay-container .overlay .overlay-left {
+  transform: translateX(25%);
+  /* عشان اظهر الجزء الي بظل مختفي */
+}
+.container.left-panel-active .overlay-container .overlay .overlay-right {
+  transform: translateX(50%);
+  /* مجرد انيميشن ليظهرلي انه الاوفرلي اليمين بزيح مع تحريك الاوفرلي كونتينر */
+}
+.container.left-panel-active .sign-in-container {
+  opacity: 0;
+  transform: translateX(30%);
+  /* 
+    transform: translateX(30%);
+    مجرد تاثير عشان يبين انه الفورم بزيح وبختفي
+    */
+}
+.container.left-panel-active .sign-up-container {
+  opacity: 1;
+  transform: translateX(66%);
+  z-index: 5;
+}
+.OverLayBtnScaled {
+  animation: scaleBtn 600ms;
+}
+@keyframes scaleBtn {
+  0% {
+    width: 148px;
+  }
+  50% {
+    width: 250px;
+  }
+  100% {
+    width: 148px;
+  }
+}
