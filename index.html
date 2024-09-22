@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log-in/sig-nup</title>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log-in/sign-up</title>
+    <link rel="stylesheet" href="style.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
-</head>
-<body>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>create account</h1>
-                <div class="social">
-                    <a href="#"><i class="fa-brands fa-google"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <span>or use your email regesteriation</span>
-                <div class="infield">
-                    <input type="text" placeholder="name" name="name">
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input type="email" placeholder="email" name="email">
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input type="password" placeholder="password" name="password">
-                    <label></label>
-                </div>
-                <button type="submit">sign-up</button>
-            </form>
+      <div class="form-container sign-up-container">
+        <form action="#">
+          <h1>create account</h1>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <span>or use your email regesteriation</span>
+          <div class="infield">
+            <input type="text" placeholder="name" name="name" />
+            <label></label>
+          </div>
+          <div class="infield">
+            <input type="email" placeholder="email" name="email" />
+            <label></label>
+          </div>
+          <div class="infield">
+            <input type="password" placeholder="password" name="password" />
+            <label></label>
+          </div>
+          <button type="submit">sign-up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>sign-in</h1>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <span>or use your account</span>
+          <div class="infield">
+            <input type="email" placeholder="email" name="email" />
+            <label></label>
+          </div>
+          <div class="infield">
+            <input type="password" placeholder="password" name="password" />
+            <label></label>
+          </div>
+          <a href="#" class="forgetPassword"> forget your password ? </a>
+          <button type="submit" id="sign-in">sign-in</button>
+        </form>
+      </div>
+      <div class="overlay-container" id="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>welcome Back!</h1>
+            <p>
+              already have account? login to your account and continue your
+              jurney
+            </p>
+            <button>Sign-in</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>hello visitor !</h1>
+            <p>
+              sign up using your personal info and start your jurney with us !
+            </p>
+            <button id="sign-up">Sign-up</button>
+          </div>
         </div>
-        <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>sign-in container</h1>
-                <div class="social">
-                    <a href="#"><i class="fa-brands fa-google"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <span>or use your account</span>
-                <div class="infield">
-                    <input type="email" placeholder="email" name="email">
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input type="password" placeholder="password" name="password">
-                    <label></label>
-                </div>
-                <a href="#" class="forgetPassword"> forget your password ? </a>
-                <button type="submit" id="sign-in">sign-in</button>
-            </form>
-        </div>
-        <div class="overlay-container" id="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>! welcome back</h1>
-                    <p>to keep conected with us , please login with your personal info</p>
-                    <button>Sign-in</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>hello friend</h1>
-                    <p>enter your personal email and start your journey with us</p>
-                    <button id="sign-up">Sign-up</button>
-                </div>
-            </div>
-            <button id="overlayBtn"></button>
-        </div>
+        <button id="overlayBtn"></button>
+      </div>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

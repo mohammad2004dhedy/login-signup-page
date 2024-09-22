@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 :root {
-  --linear-gradient: linear-gradient(to right, #141e30, #243b55);
-  --color1: #141e30;
-  --color2: #243b55;
+  --linear-gradient: linear-gradient(to right, #141e30, crimson);
+  --color1: #511b33;
+  --color2: crimson;
 }
 body {
   height: 100vh;
@@ -32,7 +32,7 @@ button {
   padding: 0 40px;
   width: 60%;
   height: 100%;
-  transition: 600ms all ease-in-out;
+  transition: 400ms all ease-in-out;
 }
 .sign-up-container {
   opacity: 0;
@@ -117,7 +117,7 @@ button {
 }
 .form-container button {
   margin-top: 30px;
-  transition: all ease-in-out 500ms;
+  transition: all ease-in-out 400ms;
 }
 .form-container button:hover {
   background: #fff;
@@ -130,7 +130,7 @@ button {
   top: 0;
   left: 60%;
   z-index: 9;
-  transition: all ease-in-out 500ms;
+  transition: all ease-in-out 400ms;
   overflow: hidden;
 }
 .overlay {
@@ -138,7 +138,7 @@ button {
   background: var(--linear-gradient);
   height: 100%;
   color: #fff;
-  transition: all ease-in-out 500ms;
+  transition: all ease-in-out 400ms;
   left: -150%;
   /* 
     left:-150%;
@@ -162,7 +162,7 @@ button {
   text-align: center;
   height: 100%;
   padding: 0 40px;
-  transition: 500ms ease-in-out;
+  transition: 400ms ease-in-out;
   width: 340px;
 }
 #overlayBtn {
@@ -177,12 +177,13 @@ button {
   background: transparent;
 }
 .overlay-left {
-  right: 60%;
-  transform: translateX(0%);
+  /* right: 60%; */
+  left: 0;
+  /* transform: translateX(0%); */
 }
 .overlay-right {
   right: 0;
-  transform: translateX(0%);
+  /* transform: translateX(0%); */
 }
 
 .overlay-panel h1 {
@@ -197,12 +198,13 @@ button {
   font-size: 14px;
 }
 .overlay-panel button {
-  border: solid 2px white;
+    border: none;
   background: transparent;
 }
 
 .container.left-panel-active .overlay-container {
-  transform: translateX(-150%);
+  /* transform: translateX(-150%); */
+  left: 0;
   /* زيحه ناحية الشمال */
 }
 .container.left-panel-active .overlay-container .overlay {
